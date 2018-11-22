@@ -1,0 +1,19 @@
+{
+    "name": "andrelbsouza/facebook-bot-sdk",
+    "description": "SDK para utiliza\u0000\u0000o de chat bot com o facebook",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andre Souza",
+            "email": "andre.souza@cecres.com.br"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^7.4"
+    },
+    "autoload":{
+        "psr-4": {
+            "ChatBot\\": "src"
+        }
+    }
+}
