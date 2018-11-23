@@ -1,12 +1,10 @@
 <?php
 namespace ChatBot\Message;
 
-class Text
+class Text implements Message
 {
     private $recipientId;
-    /**
-     * Text constructor.
-     */
+
     public function __construct(string $recipientId)
     {
         $this->recipientId = $recipientId;

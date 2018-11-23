@@ -1,15 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: func068
- * Date: 22/11/2018
- * Time: 12:27
- */
-
 namespace ChatBot\Message;
 
-
-class Audio
+class Audio implements Message
 {
+    private $recipientId;
 
+    public function __construct(string $recipientId)
+    {
+        $this->recipientId = $recipientId;
+    }
+
+    public function message(string $messageText) :array {
+        return [
+            'recipient' => [
+                'id' => $this->recipientId
+            ],
+            'message' => [
+                'attachment' => [
+                    'type' => 'audio',
+                    'payload' => [
+                        'url' => $messageText
+                    ]
+                ]
+            ]
+        ];
+    }
 }

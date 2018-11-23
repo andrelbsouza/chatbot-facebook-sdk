@@ -1,7 +1,7 @@
 <?php
 namespace ChatBot\Message;
 
-class File implements Message
+class Image implements Message
 {
     private $recipientId;
 
@@ -17,7 +17,7 @@ class File implements Message
             ],
             'message' => [
                 'attachment' => [
-                    'type' => 'file',
+                    'type' => 'image',
                     'payload' => [
                         'url' => $messageText
                     ]

@@ -1,8 +1,7 @@
 <?php
 namespace ChatBot\Message;
 
-
-class Audio implements Message
+class File implements Message
 {
     private $recipientId;
 
@@ -18,7 +17,7 @@ class Audio implements Message
             ],
             'message' => [
                 'attachment' => [
-                    'type' => 'audio',
+                    'type' => 'file',
                     'payload' => [
                         'url' => $messageText
                     ]
