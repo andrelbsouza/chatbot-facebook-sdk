@@ -1,12 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: func068
- * Date: 22/11/2018
- * Time: 16:31
- */
+namespace ChatBot;
 
-class CallSendApiTest
+use ChatBot\Message\Text;
+use PHPUnit\Framework\TestCase;
+
+class CallSendApiTest extends TestCase
 {
-
+    /**
+     * @expectedException  \GuzzleHttp\Exception\ClientException
+     */
+    public function testMakeRequest(){
+        $message = (new Text(1))->message('Oiii');
+        (new CallSendApi('28sj82'))->make($message);
+    }
 }
