@@ -1,11 +1,9 @@
 <?php
 namespace ChatBot\TemplatesMessage;
 
-
 use ChatBot\Element\ElementInterface;
-use ChatBot\Message\Message;
 
-class ButtonsTemplate implements Message
+class ButtonsTemplate implements TemplateInterface
 {
     protected $buttons = [];
     protected $recipientId;
