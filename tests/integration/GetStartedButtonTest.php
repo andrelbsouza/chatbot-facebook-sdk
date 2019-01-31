@@ -1,16 +1,24 @@
 <?php
 namespace ChatBot;
 
-use ChatBot\Message\Text;
 use PHPUnit\Framework\TestCase;
 
-class CallSendApiTest extends TestCase
+class GetStartedButtonTest extends TestCase
 {
-    /**
-     * @expectedException  \GuzzleHttp\Exception\ClientException
-     */
-    public function testMakeRequest(){
-        $message = (new Text(1))->message('Oiii');
-        (new CallSendApi('28sj82'))->make($message);
+
+    public function testAddGetStartedButton(){
+        $data = (new GetStartedButton())->add('iniciar');
+        $callSendApi = new CallSendApi('SEU TOKEN AQUI');
+        $result = $callSendApi->make($data, CallSendApi::URL_PROFILE);
+
+        $this->assertTrue(is_string($result));
     }
+
+    public  function  testRemoveGetStartedButton(){
+        $data = (new GetStartedButton())->remove();
+        $callSendApi = new CallSendApi('SEU TOKEN AQUI');
+        $result = $callSendApi->make($data, CallSendApi::URL_PROFILE, 'DELETE');
+
+    }
+
 }

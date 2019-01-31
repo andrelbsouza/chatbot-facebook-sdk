@@ -33,7 +33,7 @@ class GenericTemplateTest extends TestCase
                     'type' => 'template',
                     'payload' => [
                         'template_type' => 'generic',
-                        'buttons' => [
+                        'elements' => [
                             [
                                 'title' => 'Curso de Angular',
                                 'subtitle' => 'Curso de Angular',

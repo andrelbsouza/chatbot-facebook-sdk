@@ -1,15 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: func068
- * Date: 31/01/2019
- * Time: 14:47
- */
-
 namespace ChatBot;
 
 
 class GetStartedButton
 {
+    public function add(string $postback){
+        return [
+            'get_started' => [
+                'payload' => $postback
+            ]
+        ];
+    }
 
+    public function remove(){
+        return [
+            'fields' => [
+                'get_started'
+            ]
+        ];
+    }
 }
