@@ -1,7 +1,6 @@
 <?php
 namespace ChatBot;
 
-
 class SenderRequest
 {
     private $event;

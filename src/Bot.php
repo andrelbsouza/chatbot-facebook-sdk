@@ -20,14 +20,14 @@ class Bot
 
     public function message(string $type, string $message)
     {
-        $type = $this->load($type, 'CodeBot\Message');
+        $type = $this->load($type, 'ChatBot\Message');
         $message = $type->message($message);
         return $this->callSendApi($message);
     }
 
     public function template(string $type, string $message, array $elements, array $config = [])
     {
-        $type = $this->load($type.'Template', 'CodeBot\TemplatesMessage');
+        $type = $this->load($type.'Template', 'ChatBot\TemplatesMessage');
 
         foreach ($config as $method => $params) {
             call_user_func_array([$type, $method], $params);
