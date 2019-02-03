@@ -19,7 +19,8 @@ class CallSendApi
         $this->pageAccessToken = $pageAccessToken;
     }
 
-    public function make(array $message, string $url = null, $method = 'POST'){
+    public function make(array $message, string $url = null, $method = 'POST') :string
+    {
         $client = new Client([
             'curl' => [
                 CURLOPT_SSL_VERIFYPEER => false,
